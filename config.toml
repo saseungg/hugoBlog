@@ -1,57 +1,121 @@
-baseURL = "http://example.org/"
+# [en, zh-cn, fr, ...] determines default content language
+defaultContentLanguage = "en"
+# language code
+languageCode = "en"
+title = "(this)=>daon"
 
-# 更改使用 Hugo 构建网站时使用的默认主题
+# Change the default theme to be use when building the site with Hugo
 theme = "LoveIt"
+summaryLength=500
 
-# 网站标题
-title = "我的全新 Hugo 网站"
+[params]
+  # LoveIt theme version
+  version = "0.2.X"
+  defaultTheme = "auto"
 
-# 网站语言, 仅在这里 CN 大写 ["en", "zh-CN", "fr", "pl", ...]
-languageCode = "zh-CN"
-# 语言名称 ["English", "简体中文", "Français", "Polski", ...]
-languageName = "简体中文"
-# 是否包括中日韩文字
-hasCJKLanguage = true
+  [params.header]
+    # desktop header mode ("fixed", "normal", "auto")
+    desktopMode = "auto"
+    # mobile header mode ("fixed", "normal", "auto")
+    mobileMode = "auto"
+  [params.footer]
+    enable = true
+    since = 2023
+  [params.home.profile]
+      enable = true
+      avatarURL = "/images/profile.JPG"
+      subtitle = "Programmer rather than coder."
+      # whether to use typeit animation for subtitle
+      typeit = true
+      # whether to show social links
+      social = true
+  [params.social]
+    GitHub = "saseungg"
+    Email = "yeon14766@gmail.com"
+    RSS = true
+  [params.page]
+    lightgallery = true
+    [params.page.share]
+      enable = true
+      Twitter = true
+      Facebook = true
+      Linkedin = true
+      Blogger = true
+    [params.page.code]
+      # whether to show the copy button of the code block
+      copy = true
+      # the maximum number of lines of displayed code by default
+      maxShownLines = 500
+    [params.page.comment]
+      enable = true
+      [params.page.comment.utterances]
+        enable = true
+        repo="hugoBlog"
+        issueTerm="pathname"
+        label="Comment"
+        lightTheme = "github-light"
+        darkTheme = "github-dark"
+  [params.analytics]
+    enable = true
+    # Google Analytics
+    [params.analytics.google]
+      id = "UA-86432198-1"
+      # whether to anonymize IP
+      anonymizeIP = true
+  [params.typeit]
+    # typing speed between each step (measured in milliseconds)
+    speed = 100
+    # blinking speed of the cursor (measured in milliseconds)
+    cursorSpeed = 500
+    # character used for the cursor (HTML format is supported)
+    cursorChar = "|"
+    # cursor duration after typing finishing (measured in milliseconds, "-1" means unlimited)
+    duration = -1
 
-# 作者配置
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 1
+
 [author]
-  name = "xxxx"
-  email = ""
-  link = ""
+  name = "daon"
+  link = "https://github.com/saseungg"
 
-# 菜单配置
 [menu]
   [[menu.main]]
-    weight = 1
     identifier = "posts"
-    # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
+    # you can add extra information before the name (HTML format is supported), such as icons
     pre = ""
-    # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
+    # you can add extra information after the name (HTML format is supported), such as icons
     post = ""
-    name = "文章"
+    name = "Posts"
     url = "/posts/"
-    # 当你将鼠标悬停在此菜单链接上时, 将显示的标题
+    # title will be shown when you hover on this menu link
     title = ""
+    weight = 1
   [[menu.main]]
-    weight = 2
     identifier = "tags"
     pre = ""
     post = ""
-    name = "标签"
+    name = "Tags"
     url = "/tags/"
     title = ""
+    weight = 2
   [[menu.main]]
-    weight = 3
     identifier = "categories"
     pre = ""
     post = ""
-    name = "分类"
+    name = "Categories"
     url = "/categories/"
     title = ""
+    weight = 3
 
-# Hugo 解析文档的配置
+# Markup related configuration in Hugo
 [markup]
-  # 语法高亮设置 (https://gohugo.io/content-management/syntax-highlighting)
+  # Syntax Highlighting (https://gohugo.io/content-management/syntax-highlighting)
   [markup.highlight]
-    # false 是必要的设置 (https://github.com/dillonzq/LoveIt/issues/158)
+    # false is a necessary configuration (https://github.com/dillonzq/LoveIt/issues/158)
     noClasses = false
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
