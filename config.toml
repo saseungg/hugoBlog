@@ -64,6 +64,10 @@ buildFuture = true # enable for development. on the repo, posts will only be com
     pre = ""
     post = ""
     typeit = false # optional animation
+  [params.app]
+    noFavicon = false
+    svgFavicon = "/images/favicon.ico"
+
   [params.footer]
     enable = true
     custom = ""
