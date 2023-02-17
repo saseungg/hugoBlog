@@ -250,6 +250,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       dismiss = ""
       link = ""
 
+
   # Compatibility config
   [params.compatibility]
     # whether to use Polyfill.io to be compatible with older browsers
@@ -302,10 +303,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   # Google Analytics 相关隐私 (被 params.analytics.google 替代)
   [privacy.googleAnalytics]
     # ...
-  [privacy.twitter]
-    enableDNT = true
-  [privacy.youtube]
-    privacyEnhanced = true
+
 
 # Options to make output .md files
 [mediaTypes]
