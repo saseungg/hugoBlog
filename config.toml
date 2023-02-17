@@ -1,134 +1,320 @@
-baseURL = "https://growdaon.netlify.app/"
+# baseURL = "https://growdaon.netlify.app/"
+# [en, zh-cn, fr, pl, ...] determines default content language
+defaultContentLanguage = "en"
+# theme
 theme = "LoveIt"
+# themes directory
+
+# website title
 title = "(this) -> daon"
-languageCode = "en"
-languageName = "English"
-paginate = 5
 
-googleAnalytics = "G-W0STJ4D3N3"
-
+# whether to use robots.txt
 enableRobotsTXT = true
+# whether to use git commit log
 enableGitInfo = true
+# whether to use emoji code
 enableEmoji = true
 
-buildFuture = true # enable for development. on the repo, posts will only be committed on time.
-
-[author]
-  name = "daon"
-  email = ""
-  link = ""
-
-# Menu config
-[menu]
-  [[menu.main]]
+[languages]
+  [languages.en]
     weight = 1
-    identifier = "posts"
-    # you can add extra information before the name (HTML format is supported), such as icons
-    pre = ""
-    post = ""
-    name = "Posts"
-    url = "/posts/"
-    # title will be shown when you hover on this menu link
-    title = ""
-  [[menu.main]]
-    weight = 2
-    identifier = "tags"
-    pre = ""
-    post = ""
-    name = "Tags"
-    url = "/tags/"
-    title = ""
-  [[menu.main]]
-    weight = 3
-    identifier = "categories"
-    pre = ""
-    post = ""
-    name = "Categories"
-    url = "/categories/"
-    title = ""
+    # language code
+    languageCode = "en"
+    # language name
+    languageName = "English"
+    # whether to include Chinese/Japanese/Korean
+    hasCJKLanguage = false
+    # default amount of posts in each pages
+    paginate = 12
+    # [UA-XXXXXXXX-X] google analytics code
+    googleAnalytics = ""
+    # copyright description used only for seo schema
+    #copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
+    # Menu config
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        identifier = "posts"
+        # you can add extra information before the name (HTML format is supported), such as icons
+        pre = ""
+        # you can add extra information after the name (HTML format is supported), such as icons
+        post = ""
+        name = "Posts"
+        url = "/posts/"
+        # title will be shown when you hover on this menu link.
+        title = ""
+        weight = 1
+      [[languages.en.menu.main]]
+        identifier = "tags"
+        pre = ""
+        post = ""
+        name = "Tags"
+        url = "/tags/"
+        title = ""
+        weight = 2
+      [[languages.en.menu.main]]
+        identifier = "categories"
+        pre = ""
+        post = ""
+        name = "Categories"
+        url = "/categories/"
+        title = ""
+        weight = 3
+
+      # [[languages.en.menu.main]]
+      #   identifier = "github"
+      #   pre = "<i class='fab fa-github fa-fw'></i>"
+      #   post = ""
+      #   name = ""
+      #   url = "https://github.com/dillonzq/LoveIt"
+      #   title = "GitHub"
+      #   weight = 6
+    [languages.en.params]
+      # site description
+      description = "(this) -> daon"
+      # site keywords
+      keywords = ["Theme", "Hugo"]
+      # App icon config
+      [languages.en.params.app]
+        # optional site title override for the app when added to an iOS home screen or Android launcher
+        title = "(this) -> daon"
+        # whether to omit favicon resource links
+        noFavicon = false
+        # modern SVG favicon to use in place of older style .png and .ico files
+        svgFavicon = "/images/android-chrome-512x512.png"
+        # Android browser theme color
+        themeColor = "#ffffff"
+        # Safari mask icon color
+        iconColor = "#5bbad5"
+        # Windows v8-10 tile color
+        tileColor = "#da532c"
+      # # Search config
+      # [languages.en.params.search]
+      #   enable = false
+      #   # type of search engine ("lunr", "algolia")
+      #   type = "algolia"
+      #   # max index length of the chunked content
+      #   contentLength = 4000
+      #   # placeholder of the search bar
+      #   placeholder = ""
+      #   # max number of results length
+      #   maxResultLength = 10
+      #   # snippet length of the result
+      #   snippetLength = 30
+      #   # HTML tag name of the highlight part in results
+      #   highlightTag = "em"
+      #   # whether to use the absolute URL based on the baseURL in search index
+      #   absoluteURL = false
+      #   [languages.en.params.search.algolia]
+      #     index = "index.en"
+      #     appID = "PASDMWALPK"
+      #     searchKey = "b42948e51daaa93df92381c8e2ac0f93"
+      # Home page config
+      [languages.en.params.home]
+        # amount of RSS pages
+        rss = 10
+        # Home page profile
+        [languages.en.params.home.profile]
+          enable = true
+          # Gravatar Email for preferred avatar in home page
+          gravatarEmail = ""
+          # URL of avatar shown in home page
+          avatarURL = "/images/profile.JPG"
+          # title shown in home page (HTML format is supported)
+          title = ""
+          # subtitle shown in home page
+          subtitle = "My Journey to Becoming a Better Developer"
+          # whether to use typeit animation for subtitle
+          typeit = true
+          # whether to show social links
+          social = true
+          # disclaimer (HTML format is supported)
+          disclaimer = ""
+        # Home page posts
+        [languages.en.params.home.posts]
+          enable = true
+          # special amount of posts in each home posts page
+          paginate = 6
+      # Social config in home page
+      [languages.en.params.social]
+        GitHub = "saseungg"
+        Linkedin = ""
+        Twitter = ""
+        Instagram = ""
+        Facebook = ""
+        Email = "yeon14766@gmail.com"
+        RSS = true
 
 [params]
-  env = "production"
-  defaultTheme = "dark"
-  dateFormat = "January 2, 2006"
-  title = "daon"
-  images = ["/undefined.png"]
-  [params.header]
-    # behaviour of header toolbar
-    desktopMode = "fixed"
-    mobileMode = "auto"
-    [params.header.title]
-    logo = "" #TBD
-    name = "(this) -> daon"
-    pre = ""
-    post = ""
-    typeit = false # optional animation
+  # LoveIt theme version
+  version = "0.2.X"
+  # site default theme ("light", "dark", "auto")
+  defaultTheme = "auto"
+  # public git repo url only then enableGitInfo is true
+  # gitRepo = "https://github.com/dillonzq/LoveIt"
+  # which hash function used for SRI, when empty, no SRI is used ("sha256", "sha384", "sha512", "md5")
+  fingerprint = ""
+  # date format
+  dateFormat = "2006-01-02"
+  # website images for Open Graph and Twitter Cards
+  images = ["/logo.png"]
 
+  # Header config
+  [params.header]
+    # desktop header mode ("fixed", "normal", "auto")
+    desktopMode = "auto"
+    # mobile header mode ("fixed", "normal", "auto")
+    mobileMode = "auto"
+    # Header title config
+    [params.header.title]
+      # URL of the LOGO
+      logo = ""
+      # title name
+      name = "(this) -> daon"
+      # you can add extra information before the name (HTML format is supported), such as icons
+      # pre = "<i class='far fa-kiss-wink-heart fa-fw'></i>"
+      # you can add extra information after the name (HTML format is supported), such as icons
+      post = ""
+      # whether to use typeit animation for title name
+      typeit = false
+
+  # Footer config
   [params.footer]
     enable = true
-    custom = ""
+    # Custom content (HTML format is supported)
+    custom = ''
+    # whether to show Hugo and theme info
     hugo = false
+    # whether to show copyright info
     copyright = true
+    # whether to show the author
     author = true
+    # site creation time
     since = 2023
-  [params.section] # aka ALL posts page config
-    paginate = 10
-    dateFormat = "January 2, 2006"
+    # ICP info only in China (HTML format is supported)
+    # icp = ""
+    # license info (HTML format is supported)
+    # license= '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
+
+  # Section (all posts) page config
+  [params.section]
+    # special amount of posts in each section page
+    paginate = 20
+    # date format (month and day)
+    dateFormat = "01-02"
+    # amount of RSS pages
     rss = 10
-  [params.list] # category or tag list
-    paginate = 10
-    dateFormat = "January 2, 2006"
+
+  # List (category or tag) page config
+  [params.list]
+    # special amount of posts in each list page
+    paginate = 20
+    # date format (month and day)
+    dateFormat = "01-02"
+    # amount of RSS pages
     rss = 10
-  [params.search]
-   enable = false
-    type = "lunr"
-    contentLength = 4000
-    placeholder = "Search..."
-    maxResultLength = 10
-    snippetLength = 30
-    highlightTag = "em"
-    absoluteURL = false
-  [params.home]
-    rss = 10
-    [params.home.profile]
-      enable = true
-      avatarURL = "/images/profile.JPG"
-      title = ""
-      subtitle = "My Journey to Becoming a Better Developer"
-      typeit = true
-      social = true
-    [params.home.posts]
-      enable = true
-      paginate = 5
-  [params.social]
-    GitHub = "saseungg"
-    Linkedin = ""
-    Instagram = ""
-    Facebook = ""
-    Email = "yeon14766@gmail.com"
-    RSS = true
-  [params.page] # config for all pages (?)
+
+  # Page config
+  [params.page]
+    # whether to hide a page from home page
     hiddenFromHomePage = false
+    # whether to hide a page from search results
     hiddenFromSearch = false
-    twemoji = true # These are :thing: emojis
-    lightgallery = false # As far as I can tell, lightgallery is enabled even when this is false.
-    fraction = false # Display fractions with `[numer]/[denom]`. Don't need them right now
-    fontawesome = false # these are too complex for me to use, in all likelihood
+    # whether to enable twemoji
+    twemoji = false
+    # whether to enable lightgallery
+    lightgallery = false
+    # whether to enable the ruby extended syntax
+    ruby = true
+    # whether to enable the fraction extended syntax
+    fraction = true
+    # whether to enable the fontawesome extended syntax
+    fontawesome = true
+    # whether to show link to Raw Markdown content of the content
+    linkToMarkdown = true
+    # whether to show the full text content in RSS
+    rssFullText = false
+    # Table of the contents config
     [params.page.toc]
+      # whether to enable the table of the contents
       enable = true
-      keepStatic = true # TBD
-      auto = true # TBD
+      # whether to keep the static table of the contents in front of the post
+      keepStatic = false
+      # whether to make the table of the contents in the sidebar automatically collapsed
+      auto = true
+    # Code config
     [params.page.code]
+      # whether to show the copy button of the code block
       copy = true
+      # the maximum number of lines of displayed code by default
       maxShownLines = 10
+    # KaTeX mathematical formulas config (KaTeX https://katex.org/)
     [params.page.math]
-      enable = true # Only enable this if you don't care about page speed.
+      enable = true
+      # default block delimiter is $$ ... $$ and \\[ ... \\]
+      blockLeftDelimiter = ""
+      blockRightDelimiter = ""
+      # default inline delimiter is $ ... $ and \\( ... \\)
+      inlineLeftDelimiter = ""
+      inlineRightDelimiter = ""
+      # KaTeX extension copy_tex
+      copyTex = true
+      # KaTeX extension mhchem
+      mhchem = true
+    # Mapbox GL JS config (Mapbox GL JS https://docs.mapbox.com/mapbox-gl-js)
+    [params.page.mapbox]
+      # access token of Mapbox GL JS
+      accessToken = "pk.eyJ1IjoiZGlsbG9uenEiLCJhIjoiY2s2czd2M2x3MDA0NjNmcGxmcjVrZmc2cyJ9.aSjv2BNuZUfARvxRYjSVZQ"
+      # style for the light theme
+      lightStyle = "mapbox://styles/mapbox/light-v10?optimize=true"
+      # style for the dark theme
+      darkStyle = "mapbox://styles/mapbox/dark-v10?optimize=true"
+      # whether to add NavigationControl (https://docs.mapbox.com/mapbox-gl-js/api/#navigationcontrol)
+      navigation = true
+      # whether to add GeolocateControl (https://docs.mapbox.com/mapbox-gl-js/api/#geolocatecontrol)
+      geolocate = true
+      # whether to add ScaleControl (https://docs.mapbox.com/mapbox-gl-js/api/#scalecontrol)
+      scale = true
+      # whether to add FullscreenControl (https://docs.mapbox.com/mapbox-gl-js/api/#fullscreencontrol)
+      fullscreen = true
+    # Social share links in post page
     [params.page.share]
-      enable = false
+      enable = true
+      Twitter = false
+      Facebook = false
+      Linkedin = false
+      Whatsapp = false
+      Pinterest = false
+      Tumblr = false
+      HackerNews = false
+      Reddit = false
+      VK = false
+      Buffer = false
+      Xing = false
+      Line = false
+      Instapaper = false
+      Pocket = false
+      Digg = false
+      Stumbleupon = false
+      Flipboard = false
+      Weibo = false
+      Renren = false
+      Myspace = false
+      Blogger = false
+      Baidu = false
+      Odnoklassniki = false
+      Evernote = false
+      Skype = false
+      Trello = false
+      Mix = false
+    # Comment config
     [params.page.comment]
       enable = true
+      # Disqus comment config (https://disqus.com/)
       [params.page.comment.disqus]
         enable = false
+        # Disqus shortname to use Disqus in posts
+        shortname = ""
+      # Gitalk comment config (https://github.com/gitalk/gitalk)
       # Utterances comment config (https://utteranc.es/)
       [params.page.comment.utterances]
         enable = true
@@ -138,37 +324,94 @@ buildFuture = true # enable for development. on the repo, posts will only be com
         label = "Comment"
         lightTheme = "github-light"
         darkTheme = "github-dark"
-#   [params.page.library]
-#   [params.page.seo]
+    # Third-party library config
+    [params.page.library]
+      [params.page.library.css]
+        # someCSS = "some.css"
+        # someCSS = "https://cdn.example.com/some.css"
+      [params.page.library.js]
+        # someJavascript = "some.js"
+        # someJavascript = "https://cdn.example.com/some.js"
+    # Page SEO config
+    [params.page.seo]
+      # image URL
+      images = []
+      # Publisher info
+      [params.page.seo.publisher]
+        name = "daon"
+        logoUrl = "/images/profile.JPG"
 
+  # TypeIt config
   [params.typeit]
+    # typing speed between each step (measured in milliseconds)
     speed = 100
-    cursorSpeed = 1000
+    # blinking speed of the cursor (measured in milliseconds)
+    cursorSpeed = 800
+    # character used for the cursor (HTML format is supported)
     cursorChar = "|"
-    duration = 5000 # "time (in ms) until cursor reset". This doesn't actually work because of a bug in theme.js:initTypeIt()
+    # cursor duration after typing finishing (measured in milliseconds, "-1" means unlimited)
+    duration = -1
+
+  # Site verification code for Google/Bing/Yandex/Pinterest/Baidu
   [params.verification]
     google = ""
     bing = ""
     yandex = ""
-# [params.seo]
-#   thumbnailUrl 
+    pinterest = ""
+    baidu = ""
+
+  # Site SEO config
+  [params.seo]
+    # image URL
+    image = "/images/Apple-Devices-Preview.png"
+    # thumbnail URL
+    thumbnailUrl = "/images/screenshot.png"
+
+  # Analytics config
   [params.analytics]
     enable = false
+    # Google Analytics
     [params.analytics.google]
-      id = "G-W0STJ4D3N3"
+      id = ""
+      # whether to anonymize IP
       anonymizeIP = true
+    # Fathom Analytics
+    [params.analytics.fathom]
+      id = ""
+      # server url for your tracker if you're self hosting
+      server = ""
+
+  # Cookie consent config
   [params.cookieconsent]
     enable = false
+    # text strings used for Cookie consent banner
     [params.cookieconsent.content]
-      message = "This site uses Google Analytics."
-      dismiss = "Allow cookies"
-      link = "What are cookies?"
-# [params.cdn]
-  [params.compatibility] # goodbye IE
+      message = ""
+      dismiss = ""
+      link = ""
+
+  # CDN config for third-party library files
+  [params.cdn]
+    # CDN data file name, disabled by default
+    # ("jsdelivr.yml")
+    # located in "themes/LoveIt/assets/data/cdn/" directory
+    # you can store your own data files in the same path under your project:
+    # "assets/data/cdn/"
+    # ("jsdelivr.yml")
+    # "assets/data/cdn/"
+    data = "jsdelivr.yml"
+
+  # Compatibility config
+  [params.compatibility]
+    # whether to use Polyfill.io to be compatible with older browsers
     polyfill = false
+    # whether to use object-fit-images to be compatible with older browsers
+    # 是否使用 object-fit-images 来兼容旧式浏览器
     objectFit = false
 
+# Markup related configuration in Hugo
 [markup]
+  # Syntax Highlighting (https://gohugo.io/content-management/syntax-highlighting)
   [markup.highlight]
     codeFences = true
     guessSyntax = true
@@ -177,6 +420,7 @@ buildFuture = true # enable for development. on the repo, posts will only be com
     # false is a necessary configuration (https://github.com/dillonzq/LoveIt/issues/158)
     noClasses = false
   # Goldmark is from Hugo 0.60 the default library used for Markdown
+  # Goldmark 是 Hugo 0.60 以来的默认 Markdown 解析库
   [markup.goldmark]
     [markup.goldmark.extensions]
       definitionList = true
@@ -194,17 +438,48 @@ buildFuture = true # enable for development. on the repo, posts will only be com
     startLevel = 2
     endLevel = 6
 
+# Author config
+[author]
+  name = "daon"
+  email = "yeon14766@gamil.com"
+  link = ""
+
+# Sitemap config
 [sitemap]
   changefreq = "weekly"
   filename = "sitemap.xml"
-  priority = 0.5 # no idea what this does
+  priority = 0.5
 
-[permalinks]
-  posts = "blog/:filename"
+# Permalinks config (https://gohugo.io/content-management/urls/#permalinks)
+[Permalinks]
+  # posts = ":year/:month/:filename"
+  posts = ":filename"
 
+# Privacy config (https://gohugo.io/about/hugo-and-gdpr/)
+[privacy]
+  # privacy of the Google Analytics (replaced by params.analytics.google)
+  [privacy.googleAnalytics]
+    # ...
+  [privacy.twitter]
+    enableDNT = true
+  [privacy.youtube]
+    privacyEnhanced = true
+
+# Options to make output .md files
+[mediaTypes]
+  [mediaTypes."text/plain"]
+    suffixes = ["md"]
+
+# Options to make output .md files
+[outputFormats.MarkDown]
+  mediaType = "text/plain"
+  isPlainText = true
+  isHTML = false
+
+# Options to make hugo output files
 [outputs]
   home = ["HTML", "RSS", "JSON"]
-  page = ["HTML"]
+  page = ["HTML", "MarkDown"]
   section = ["HTML", "RSS"]
   taxonomy = ["HTML", "RSS"]
   taxonomyTerm = ["HTML"]
